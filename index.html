@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Environmental Facts</title>
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: white;
+            width: 80%;
+            max-width: 600px;
+        }
+
+        #factButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        #factButton:hover {
+            background-color: #45a049;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e7e7e7;
+            border-radius: 5px;
+            min-height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="factButton">Show Random Fact</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        const facts = [
+            { fact: "Forests cover about 31% of the land area on Earth and are essential for maintaining biodiversity." },
+            { fact: "More than 1 million species face potential extinction due to climate change and habitat loss." },
+            { fact: "The ocean absorbs about 30% of the carbon dioxide produced by humans, buffering the impacts of global warming." },
+            { fact: "Air pollution causes an estimated 7 million premature deaths worldwide every year." },
+            { fact: "Plastic pollution has become one of the most pressing environmental issues, as rapidly increasing production of disposable plastic products overwhelms the world's ability to deal with them." },
+            { fact: "Global sea levels have risen about 8 inches in the last century, with the rate of rise increasing recently." },
+            { fact: "Deforestation contributes to 12% to 20% of the global greenhouse gas emissions that contribute to global warming." },
+            { fact: "Renewable energy sources currently constitute more than 20% of the global energy supply." },
+            { fact: "The world's largest rainforest, the Amazon, absorbs about 2 billion tons of CO2 each year." },
+            { fact: "Approximately 2 billion hectares of previously productive land is degraded worldwide." }
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * facts.length);
+            const fact = facts[randomIndex].fact;
+            document.getElementById('factDisplay').textContent = fact;
+        });
+    </script>
+</body>
+</html>
